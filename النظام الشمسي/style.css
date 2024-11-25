@@ -1,0 +1,116 @@
+/* Général - Body */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #161616;
+    background-color: #f3f3f3;
+    display: grid;
+    grid-template-columns: 15rem 1fr; /* Sidebar and main */
+    grid-template-rows: auto 1fr auto; /* Header, content, footer */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.dashboard-header {
+    grid-area: header;
+    background-color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+    grid-area: sidebar;
+    background-color: #1d1d29;
+    color: #fff;
+    padding: 1.25rem;
+}
+
+.dashboard-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-sidebar ul li {
+    margin: 0.5rem 0;
+}
+
+.dashboard-sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.dashboard-sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+.dashboard-main {
+    grid-area: main;
+    padding: 1.25rem;
+    background-color: #fefefe;
+}
+
+.dashboard-main section {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-main section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #1d1d29;
+}
+
+.dashboard-main section p {
+    margin: 1rem 0;
+}
+
+.dashboard-main section img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+/* Footer */
+.dashboard-footer {
+    grid-area: footer;
+    background-color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.dashboard-footer a {
+    text-decoration: none;
+    color: #1d1d29;
+}
+
+.dashboard-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .dashboard-main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for content */
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .dashboard-main {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for content */
+    }
+}
